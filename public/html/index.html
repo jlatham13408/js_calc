@@ -2,22 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Web Calculator by {{name}}</title>
+  <title>Web Calculator by Jonnel Latham</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 </head>
 <body>
   <div id="content">
     <div id="calculator-body" class='container'>
-      <div class="row" id='display'>0</div>
+    <div class="row" id='display'>0</div>
+    <!-- <div class="row" id='num' onclick="addToScreen('x')" -->
       <div class="row">
-          <button class="key btn" id='mem-plus'>m+</button>
-          <button class="key btn" id='mem-minus'>m-</button>
-          <button class="key btn" id='mem-recall'>mr</button>
-          <button class="key btn" id='mem-clear'>mc</button>
+        <button class="key btn" id='mem-plus'>m+</button>
+        <button class="key btn" id='mem-minus'>m-</button>
+        <button class="key btn" id='mem-recall'>mr</button>
+        <button class="key btn" id='mem-clear'>mc</button>
       </div>
       <div class="row">
         <button class="btn key num">7</button>
@@ -29,10 +31,28 @@
         <button class="btn key num">4</button>
         <button class="btn key num">5</button>
         <button class="btn key num">6</button>
-        <button class="btn key operator" id='multiply'>x</button>
+        <button class="btn key operator" id='multiply'>*</button>
       </div>
-      
+      <div class="row">
+        <button class="btn key num">1</button>
+        <button class="btn key num">2</button>
+        <button class="btn key num">3</button>
+        <button class="btn key operator" id='plus'>+</button>
+      </div>
+      <div class="row">
+        <button class="btn key num">0</button>
+        <button class="key btn num">.</button>
+        <button class="key btn" id='clear'>C</button>
+        <button class="btn key operator" id='subtract'>-</button>
+      </div>
+      <div class="row">
+        <button class="btn key operataor" id='equal'>=</button>
     </div>
+
+    <!-- <div class="box">
+<div class="display"><input type="text" readonly size="18" id="d"></div> -->
+
+</div>
     <footer class="row">
 
     </footer>

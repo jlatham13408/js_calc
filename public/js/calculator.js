@@ -15,15 +15,15 @@ function add(num){
   this.current += num;
 }
 function subtract(num){
-  
+  this.current -= num;
 }
 function multiply(num){
-  
+  this.current *= num;
 }
 function divide(num){
-  
+  this.current /= num;
 }
-function result(){
+function result(num){
   return this.current;
 }
 function reset(num){
