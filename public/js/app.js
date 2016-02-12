@@ -11,10 +11,10 @@ $(document).ready(function(){
   $('#multiply').on('click', multiply);
   $('#divide').on('click', divide);
   $('.num').on('click', updateDisplay);
-  $('mem-plus').on('click', memAdd);
-  $('mem-minus').on('click', memSub);
-  $('mem-recall').on('click', memDisplay);
-  $('mem-clear').on('click', memClear);
+  $('#mem-plus').on('click', memAdd);
+  $('#mem-minus').on('click', memSub);
+  $('#mem-recall').on('click', memDisplay);
+  $('#mem-clear').on('click', memClear);
 
 
 
@@ -22,20 +22,29 @@ $(document).ready(function(){
 // I did this below
   function updateDisplay(){
       var num = $(this).text();
-      console.log(typeof num);
-      console.log(num);
-      if (display.text() === '0'){
+      var displayText = display.text();
+      if (display.text() == '0'){
         display.text(num);
-      }else if (display.text().length < 8) {
-        var temp = display.text() + num;
-        display.text(temp);
+      } else {
+        var output = display.text()+num;
+        display.text(output);
+        }
       }
+
+      // console.log(typeof num);
+      // console.log(num);
+      // if (display.text() === '0'){
+      //   display.text(num);
+      // }else if (display.text().length < 8) {
+      //   var temp = $display.text() + num;
+      //   $display.text(temp);
+      // }
       // else{
       //   display.text(display.text());
       // }
       // // console.log(display.text().length);
       //TODO: I need to fix the multiple decimal points.
-  }
+
 
   function divide(){
     var displayText = display.text();
@@ -92,35 +101,35 @@ $(document).ready(function(){
       var result = calculator.result();
       display.text(result);
       calculator.reset();
-
-
   }
-
-
 
   function clear(){
     lastOperation="";
     display.text(0);
   }
-
-  function memAdd(){
+  function memAdd() {
+    var displayText = display.text();
+    calculator.addToMemory(parseFloat(displayText));
+    display.text(0);
+    console.log(calculator.memory);
+    
+  }
+  function memSub() {
+    var displayText = display.text();
+    calculator.subtractFromMemory(parseFloat(displayText));
+    display.text(0);
+    console.log(calculator.memory);
 
   }
-
-  function memSub(){
-
-  }
-
-  function memClear(){
+  function memClear() {
+    calculator.clearMemory();
+    display.text(0);
 
   }
-
-  function memDisplay(){
+  function memDisplay() {
+    display.text(calculator.memory);
 
   }
-
-
-
 });
 
 
